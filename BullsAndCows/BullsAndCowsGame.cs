@@ -25,13 +25,12 @@ namespace BullsAndCows
                 {
                     bulls++;
                 }
-            }
-
-            for (int i = 0; i < secret.Length; i++)
-            {
-                if (guess.IndexOf(secret[i]) >= 0 && guess.IndexOf(secret[i]) != i)
+                else
                 {
-                    cows++;
+                    if (guess.IndexOf(secret[i]) >= 0)
+                    {
+                        cows++;
+                    }
                 }
             }
 
