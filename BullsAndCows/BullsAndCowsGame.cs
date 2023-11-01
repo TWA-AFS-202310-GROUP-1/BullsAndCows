@@ -31,7 +31,13 @@ namespace BullsAndCows
                 }
             }
 
-
+            for (int i = 0; i < guess.Length; i++)
+            {
+                if ((secret.IndexOf(guess[i]) != i) && (secret.IndexOf(guess[i]) >= 0))
+                {
+                    cows++;
+                }
+            }
 
             return $"{bulls}A{cows}B";
         }
