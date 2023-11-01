@@ -20,6 +20,7 @@ namespace BullsAndCows
             {
                 return "4A0B";
             }
+            
             int Anum = 0;
             int Bnum = 0;
             for(int i = 0; i<4; i++) {
