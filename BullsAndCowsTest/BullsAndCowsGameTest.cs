@@ -112,5 +112,23 @@ namespace BullsAndCowsTest
             //Then
             Assert.Equal("2A2B", result);
         }
+
+        [Theory]
+        [InlineData("5612")]
+        [InlineData("3456")]
+        [InlineData("2563")]
+        [InlineData("5146")]
+        public void Should_return_0A2B_when_guess_position_incorrect_and_digit_partial_correct(string guessNumber)
+        {
+            //Given
+            string secretNumber = "1234";
+            Mock<SecretGenerator> mockedSecretGenerator = new Mock<SecretGenerator>();
+            mockedSecretGenerator.Setup(generator => generator.GenerateSecret()).Returns(secretNumber);
+            var game = new BullsAndCowsGame(mockedSecretGenerator.Object);
+            //When
+            string result = game.Guess(guessNumber);
+            //Then
+            Assert.Equal("0A2B", result);
+        }
     }
 }
