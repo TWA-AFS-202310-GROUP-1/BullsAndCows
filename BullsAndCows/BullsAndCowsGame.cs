@@ -18,11 +18,6 @@ namespace BullsAndCows
         {
             int bulls = 0;
             int cows = 0;
-            if (guess.Equals(secret))
-            {
-                return "4A0B";
-            }
-
             for (int i = 0; i < secret.Length; i++)
             {
                 //if (guess[i] == secret[i])
@@ -34,7 +29,6 @@ namespace BullsAndCows
 
             for (int i = 0; i < secret.Length; i++)
             {
-                //if (guess[i] == secret[i])
                 if (guess.IndexOf(secret[i]) >= 0 && guess.IndexOf(secret[i]) != i)
                 {
                     cows++;
