@@ -30,7 +30,7 @@ namespace BullsAndCowsTest
         [InlineData("7834")]
         [InlineData("1935")]
         [InlineData("0274")]
-        public void Should_return_2A0B_when_guess_given_partial_positions_correct_and_values(string guessNumber)
+        public void Should_return_2A0B_when_guess_given_partial_values_correct_and_all_positions_correct(string guessNumber)
         {
             //given
             string secret = "1234";
@@ -49,7 +49,9 @@ namespace BullsAndCowsTest
 
         [Theory]
         [InlineData("1652")]
-        public void Should_return_1A1B_when_guess_given_partial_positions_correct_and_partial_values_correct(string guessNumber)
+        [InlineData("9174")]
+        [InlineData("2538")]
+        public void Should_return_1A1B_when_guess_given_partial_values_correct_and_partial_positions_correct(string guessNumber)
         {
             //given
             string secret = "1234";
@@ -68,7 +70,7 @@ namespace BullsAndCowsTest
 
         [Theory]
         [InlineData("7890")]
-        public void Should_return_0A0B_when_guess_given_all_incorrect(string guessNumber)
+        public void Should_return_0A0B_when_guess_given_everything_incorrect(string guessNumber)
         {
             //given
             string secret = "1234";
@@ -87,6 +89,7 @@ namespace BullsAndCowsTest
 
         [Theory]
         [InlineData("2341")]
+        [InlineData("3412")]
         public void Should_return_0A4B_when_guess_given_all_values_correct_and_all_positions_incorrect(string guessNumber)
         {
             //given
@@ -106,6 +109,7 @@ namespace BullsAndCowsTest
 
         [Theory]
         [InlineData("1324")]
+        [InlineData("1432")]
         public void Should_return_2A2B_when_guess_given_all_values_correct_but_partial_positions_incorrect(string guessNumber)
         {
             //given
@@ -125,6 +129,7 @@ namespace BullsAndCowsTest
 
         [Theory]
         [InlineData("5643")]
+        [InlineData("3197")]
         public void Should_return_0A2B_when_guess_given_partial_values_correct_but_all_positions_incorrect(string guessNumber)
         {
             //given
