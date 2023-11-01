@@ -80,5 +80,17 @@ namespace BullsAndCowsTest
             Assert.Equal("2A2B", result);
         }
 
+        [Fact]
+        public void Should_return_1A1B_when_guess_given_digits_and_position_partitial_wrong()
+        {
+            string guessNumber = "1562";
+            string secret = "1234";
+            Mock<SecretGenerator> mockedSecretGenerator = new Mock<SecretGenerator>();
+            mockedSecretGenerator.Setup(s => s.GenerateSecret()).Returns(secret);
+            var game = new BullsAndCowsGame(mockedSecretGenerator.Object);
+            string result = game.Guess(guessNumber);
+            Assert.Equal("1A1B", result);
+        }
+
     }
 }
