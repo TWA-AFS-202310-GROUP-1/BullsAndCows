@@ -1,5 +1,6 @@
 using BullsAndCows;
 using Moq;
+using System.Net.Sockets;
 using Xunit;
 
 namespace BullsAndCowsTest
@@ -25,6 +26,18 @@ namespace BullsAndCowsTest
             var game = new BullsAndCowsGame(mockedSecretGenerator.Object);
             string result = game.Guess(guessNumber);
             Assert.Equal("4A0B", result);
+        }
+
+        [Fact]
+        public void Should_return_2A0B_when_guess_given_digits_position_partitial_right()
+        {
+            string guessNumber = "1234";
+            string secret = "1256";
+            Mock<SecretGenerator> mockedSecretGenerator = new Mock<SecretGenerator>();
+            mockedSecretGenerator.Setup(s => s.GenerateSecret()).Returns(secret);
+            var game = new BullsAndCowsGame(mockedSecretGenerator.Object);
+            string result = game.Guess(guessNumber);
+            Assert.Equal("2A0B", result);
         }
     }
 }
