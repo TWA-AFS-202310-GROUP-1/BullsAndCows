@@ -31,8 +31,7 @@ namespace BullsAndCows
                 {
                     Bnum++;
                 }
-            }
-            
+            }            
             return  Anum.ToString() +"A" + Bnum.ToString() + "B";
         }
     }
